@@ -1,0 +1,158 @@
+--Gruppen:
+
+--Nahe Familie
+--  Armin (+)
+--  Nina (+)
+--  Mama (+)
+--Familie Peter (+)
+
+--Familie Anne
+
+--Familie Lara
+
+--SchulFreunde
+--  Peter (+)
+--  Luki (+)
+--  Lisa <--
+--  Alex (+)
+--  Svetlana <--
+--  Julian O(+)
+
+--Berlin Freunde
+--  Tristan(+)
+--  Jana <--
+--  Jana's Schwester <--
+--  Neele (+)
+--  Conny (+)
+--  Julia Ungu (+)
+--  Ceylan (+)
+--  Sergej (+)
+--  Linda (+)
+--  Agata <--
+--  Kadir Dangir (+)
+--  Sedda Kurt  (+)
+--  Kundri (+)
+--  Shitty (+)
+--  Anna Hase (+)
+--  Jule Fiedler <--
+--  Felix Fiedler <--
+--  Lea Klein! (contact?)
+--
+--DarmstadtUni Freunde (Mathe)
+--  Fabain Werner (+)
+--  Angeliki
+--  Claudia Sowadzki
+--  Daniel Körnlein
+--  Fabian Fölz
+--  Jonathan
+--  Markus Schwagenscheidt (+)
+--  Lydia Andres (+)
+--  Martin Otto
+--  Saskia Tebartz
+--  Sebastian Wenz
+--  Thomas Powell
+
+--Darmstadt Lations
+--  Carolina Alarcon
+
+--Darmstadt Metaller
+--  Christina (+)
+--  Steffen (+)
+--  Oleg (+)
+--  Marie von Oleg (+)
+--  Bröckchen <--
+--  Tim (+)
+--  Johanna <--
+--  Angela Karl (+)
+--  Lars Wegerich (+)
+--  Dennis Feldmann (+)
+--  Max Korell (+)
+--  Marco Patrizio <--
+--  Julia Klimmek <--
+--  Henno Lauinger (+)
+--  Henrike Erhardt (+)
+
+-- Darmstadt Rest
+--  Abud
+--  Tomek
+--  Tobias Raffel <--
+--  Alexandra Tebartz
+--  Andre Wisplinghof
+
+-- Rest
+--  Ilke
+--  Lisa
+--  Janne (+)
+--  Karen (+)
+
+
+
+
+INSERT INTO `friends`(`name`, `invite`) VALUES
+("Karen Hernandez", "comoGehtEsYourWrists")
+,("Tobias Raffel", "GreetingsZumMarsOldHaus")
+,("Markus Schwagenscheidt", "ohModularFormWhyDontYouHaveANorm")
+,("Lydia Andres-Schwagenscheidt", "gogoStoffyCon2022")
+
+("Janne Brunner","the100HatGenau100Episoden")
+,("Fabian Werner","TschakkaYouCanDoIt")
+
+
+,("Oleg Nikiforov","LangeZeitKeinSehenHelgi")
+,("Marie von Oleg","mjamMjamPlaetzchen")
+,("Bröckchen","haveDuTooAllesFromPhysikforgotten")
+,("Tim","tripleLoveBestDiggaHugs")
+,("Johanna","koennenPferdeZwillingeBekommen")
+,("Angela Karl","warumSchlaegstDuDirSelberInsGesicht")
+,("Lars Wegerich","moegeDerBartMitDirSein")
+,("Dennis Feldmann","ichMacheEinenStategischenRueckzug")
+,("Max Korell","douYouAuchKommenTooLateZumUnterricht")
+,("Marco Patrizio","koennenBumblebeesFliegen")
+,("Julia Klimmek","aehmSchuldeIDirActuallyNochMoney")
+,("Henno Lauinger","einLadenDerNurSelbstgemachteBuecherVerkauft")
+,("Henrike Erhardt","ErHaderteSehrMitDemFernseher")
+
+("Nina von Armin", "thereIsNoBierAufHawaii")
+,("Alex Kuhn", "esGibtImmerWasZuTunHerrKuhn")
+,("Svetlana Kuhn", "forschstDuAuchAnEinemImpfstoff")
+,("Julian Ott", "areTheLensesClearMrEngineer")
+,("Lisa Frank","dankeForAllDieTipps")
+,("Tristan Schäfer", "druckstDuEuremKindDannZugSpielzeugeAus")
+,("Jana von Tristan", "manchmalLeistenChirurgenKnochenarbeit")
+,("Janas Schwester", "einmalNachAlicanteUndzurueckBitte")
+,("Julia Ungureanu", "whenWillstDuEinziehen")
+,("Ceylan Schumacher", "machstDuSchuhefuerGazellen")
+,("Sergej WG","heyShittyIstVollNett")
+,("Linda Tinder", "wanneerGaanWeKlimmen")
+,("Agata Tinder", "bistYouStillSauerOnMich")
+,("Shitty WG", "WGleftJoinShittyOn")
+,("Anna Hase", "tinder-Not-")
+,("Lea Klein", "howIsDieLageInLeipzig")
+
+
+
+
+,("Luisa Weber", "habtIhrEigentlichEinenKinderwunsch")
+,("Alena Weber", "jal-ji-ne-sseoOderSo")
+,("Lothar Blach", "sichereArbitrageMoeglichkeit")
+,("Christiane von Petra", "esBabbeltSichNochamBesten")
+,("Kalle von Petra", "aufEinemDerWeberFesten")
+,("Ronja von Alena", "NurDieWildenDrudenLiebtenGewitter")
+,("Justus von Luisa", "dasWasBeiLuluSteht")
+
+
+
+SELECT
+    f.name AS realName,
+    f.invite AS invite,
+    CONCAT(
+        "https://no-mask-day.com/?invite=",
+        f.invite
+    ) AS inviteLink,
+    b.name AS accountName,
+    b.isWagerPayed AS isWagerPayed
+FROM
+    `friends` AS f
+LEFT JOIN `bets` AS b
+ON
+    f.id = b.friendId
