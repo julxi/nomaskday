@@ -1,7 +1,0 @@
-
-#Start lokal Server with:
-elm-live src/Main.elm -u --open --  --output=gen/elm_live.js
-
-#Fix "Body"-Bug for some browsers by setting in gen.js the following:
-var bodyNode = _VirtualDom_doc.getElementById("elmIsolationContainer");
-var nextNode = _VirtualDom_node('elm-node')(_List_Nil)(doc.bJ);
