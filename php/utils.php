@@ -15,17 +15,6 @@ try {
      throw new \mysqli_sql_exception($e->getMessage(), $e->getCode());
 }
 
-function testMail() {
-  $to = "bitt.j@pm.me";
-  $subject = "My subject";
-  $txt = "Hello world!";
-  $headers = "From: bet@no-mask-day.com";
-
-  mail($to,$subject,$txt,$headers);
-
-}
-
-
 
 function sendMail(String $email, String $name, String $passcode) : bool {
 
